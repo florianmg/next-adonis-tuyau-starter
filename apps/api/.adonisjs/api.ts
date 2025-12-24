@@ -7,7 +7,17 @@
 import type { MakeTuyauRequest, MakeTuyauResponse } from '@tuyau/utils/types'
 import type { InferInput } from '@vinejs/vine/types'
 
+type HealthGetHead = {
+  request: unknown
+  response: MakeTuyauResponse<import('../app/controllers/health_controller.ts').default['handle'], false>
+}
 export interface ApiDefinition {
+  'health': {
+    '$url': {
+    };
+    '$get': HealthGetHead;
+    '$head': HealthGetHead;
+  };
 }
 const routes = [
 ] as const;

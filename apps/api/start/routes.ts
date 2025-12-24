@@ -8,15 +8,6 @@
 */
 
 import router from '@adonisjs/core/services/router'
+const HealthController = () => import('#controllers/health_controller')
 
-router.get('/', async () => {
-  return {
-    hello: 'world',
-  }
-})
-
-router.get('/health', async () => {
-  return {
-    message: 'Server is running',
-  }
-})
+router.get('/health', [HealthController, 'handle'])
