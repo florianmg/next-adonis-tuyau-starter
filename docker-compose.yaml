@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: next-adonis-tuyau-starter_pgsql
+    restart: always
+    environment:
+      POSTGRES_DB: next-adonis-tuyau-starter_db
+      POSTGRES_USER: next-adonis-tuyau-starter_user
+      POSTGRES_PASSWORD: next-adonis-tuyau-starter_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
