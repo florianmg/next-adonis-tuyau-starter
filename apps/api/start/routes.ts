@@ -14,3 +14,9 @@ router.get('/', async () => {
     hello: 'world',
   }
 })
+
+router.get('/health', async () => {
+  return {
+    message: 'Server is running',
+  }
+})
