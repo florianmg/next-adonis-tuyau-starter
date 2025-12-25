@@ -2,6 +2,7 @@
 
 import { tuyau } from "@/utils/tuyau";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,13 +22,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen gap-4">
-      <button
-        className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 cursor-pointer"
-        type="button"
-        onClick={handleClick}
-      >
+      <Button type="button" onClick={handleClick}>
         Press me
-      </button>
+      </Button>
       <pre className="bg-gray-100 p-2 rounded-md">
         {JSON.stringify({ isLoading, data }, null, 2)}
       </pre>
